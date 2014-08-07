@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+    <package name="default" namespace="/" extends="struts-default">
+        <action name="login" class="testLoginAction" method="execute">
+            <result name="success">/TestMySQL.jsp</result>
+            <result name="login">/TestLogin.jsp</result>
+        </action>
+        <action name="testdao" class="testDaoAction" method="testDao">
+            <result name="success">/TestDAO.jsp</result>
+        </action>
+        <action name="searchByFid" class="flightAction" method="searchByFid">
+            <result name="success">/WebSearchOutputFlight.jsp</result>
+        </action>
+        <action name="webSearchInput" class="flightAction" method="webSearchInput">
+            <result name="fwd_websearchinput">/WebSearchInput.jsp</result>
+        </action>
+    </package>
+    
+    <package name="wechat" extends="struts-default">
+        <action name="weChatMsg" class="weChatAction" method="weChatMsg">
+            <result type="plainText"></result>
+        </action>
+	</package>
+</struts>
